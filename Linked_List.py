@@ -102,8 +102,10 @@ class Linked_List:
         element = self.__get_node_at(index)
         element.prev.next = element.next
         element.next.prev = element.prev
+        return_value = element.val
         element = None
-        self.__size = self.__size - 1
+        return return_value
+        
     def get_element_at(self, index):
         # Assuming the __head position (not the __header node) is indexed 0, return
         # the value stored in the node at the specified index, but do not unlink
@@ -419,15 +421,16 @@ if __name__ == '__main__':
 
         # >length indexerror
         try: 
-            testlst.insert_element_at('lmao', 10)
+            testlst.insert_element_at('lmao', 11)
             assert [id(val) for val in testlst] == pointers_original, 'changed list'
         except IndexError: print('  ✅ Passed >length IndexError')
         except AssertionError: print('  🔴 Failed >length IndexError: changed memory')
         else: print('  🔴 Failed >length IndexError')
         
+        testlst = basic_test_lst(length = 10)
         # inserttail 
         try: 
-            testlst.insert_element_at('lmao', 9)
+            testlst.insert_element_at('lmao', 10)
             assert [id(val) for val in testlst] == pointers_original, 'changed list'
         except IndexError: print('  ✅ Passed tail IndexError')
         except AssertionError: print('  🔴 Failed tail IndexError: changed memory')
