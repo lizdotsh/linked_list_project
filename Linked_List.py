@@ -127,7 +127,8 @@ class Linked_List:
         # NOTE: This method is O(1). It only has to mess with elements near the header and trailer nodes
         # NOTE: and swap some values around. This distance is always the same relative to these nodes, and 
         # NOTE: thus is constant time. 
-        if self.__size == 0: pass
+        if self.__size == 0:
+            return  
         self.__header.next.prev = self.__trailer.prev
         self.__trailer.prev.next = self.__header.next
         self.__trailer.prev = self.__header.next
