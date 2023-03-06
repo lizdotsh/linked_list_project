@@ -104,6 +104,7 @@ class Linked_List:
         element.next.prev = element.prev
         return_value = element.val
         element = None
+        self.__size -= 1
         return return_value
         
     def get_element_at(self, index):
@@ -229,6 +230,7 @@ if __name__ == '__main__':
     # But i was not sure how the grading system would see that, and you said to put it in here
     # So I will just keep it here even if it looks ugly.
     # Explanations of test cases in the docstrings for the various functions 
+    # ALSO NOTE: the runtime tests can be a little finnickey, if they dont work just run them again and it should work. 
 
     
    
