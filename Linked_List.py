@@ -76,7 +76,7 @@ class Linked_List:
         # NOTE: the place it must insert itself at. After that has been found, it only has constant time operations. as the limit
         # NOTE: as n -> inf makes constant time irrelevant, it is only O(n). Also it uses the __get_node_at private method to do this actual looping, so should be the same. 
         # NOTE: I also measured the performance in the runtime tests and it matches up at being approximately linear in practice. 
-        if (index < 0) or (index >= self.__size - 1):
+        if (index < 0) or (index >= self.__size):
             raise IndexError
         self.__size += 1
         new_node = self.__Node(val)
