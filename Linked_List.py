@@ -334,6 +334,8 @@ if __name__ == '__main__':
         1. tests removing first digit
         2. tests removing third digit (index = 2)
         3. tests removing final digit (index = 4)
+
+        also tests for length.
         """
         print('starting remove_element_at tests')
         testlst = basic_test_lst(length = 5)
@@ -341,6 +343,7 @@ if __name__ == '__main__':
         try: 
             testlst.remove_element_at(0)
             assert [i for i in testlst] == [1,2,3,4]
+            assert len(testlst) == 4, 'length error'
             [i for i in reversed(testlst)]
         except AssertionError as err: print(' 🔴 Failed to remove element at zero:', err, str(testlst))
         except: 
@@ -350,6 +353,7 @@ if __name__ == '__main__':
         testlst = basic_test_lst(length = 5)
         try: 
             testlst.remove_element_at(2)
+            assert len(testlst) == 4, 'length error'
             assert [i for i in testlst] == [0,1,3,4]
             [i for i in reversed(testlst)]
         except AssertionError as err: print(' 🔴 Failed to remove element at 2:', err, str(testlst))
@@ -360,6 +364,7 @@ if __name__ == '__main__':
         testlst = basic_test_lst(length = 5)
         try: 
             testlst.remove_element_at(4)
+            assert len(testlst) == 4, 'length error'
             assert [i for i in testlst] == [0,1,2,3]
             [i for i in reversed(testlst)]
         except AssertionError as err: print(' 🔴 Failed to remove element at end:', err, str(testlst))
