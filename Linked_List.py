@@ -1,5 +1,4 @@
 import time
-import random
 class Linked_List:
     
     class __Node:
